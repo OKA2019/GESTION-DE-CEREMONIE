@@ -15,9 +15,9 @@
 #include <time.h>
 #include "arpa/inet.h"
 #include "MYSQL/mysql.h"
-#include "../header/liste_ceremonie.h"
 #include "../header/menu.h"
 #include "../header/ceremonie.h"
+#include "../header/invite.h"
 
 
 int main()
@@ -29,40 +29,46 @@ int main()
     void ceremonie();
     void ajout_ceremonie();
     void menu();
+    void invite();
 
     //Variables 
-    int choix_liv,choix_menu = 0, compte_exit;
+    int choix_menu = 0;
 
+    printf(" \n \n ***************** BIENVENU DANS L'APPLICATION DES GESTION DE MENU DE CÉRÉMONIE ***************** \n \n ");
 
-        printf(" \n \n ***************** BIENVENU DANS L'APPLICATION DES GESTION DE MENU DE CÉRÉMONIE ***************** \n \n ");
-
-        printf(" \n  1 - Gestion \n");
+    do
+    {
+        printf(" \n  1 - Cérémonie \n");
         printf(" \n  2 - Menu \n");
-        printf(" \n  3 - Céremonie \n");
+        printf(" \n  3 - Se connecter a une cérémonie \n");
+        printf(" \n  4 - Quitté \n");
         printf("\n \n  ------->  Taper le numero de votre choiX \n \n");
-
-        do
+        scanf("%d",&choix_menu);
+        switch(choix_menu)
         {
-            scanf("%d",&choix_menu);
-            switch(choix_menu)
-            {
-                case 1:
-                    //Appel de la fonctions Céremonie
-                    ceremonie();
+            case 1:
+                ceremonie();
+                break;
+            case 2:
+                menu();
+                break;
+            case 3:
+                connect_ceremenie();
+                break;
+            case 4:
+                printf(" \n ************************ Bye, à la prochaine ! ************************ \n ");
+                break;
+            default:
+                printf(" \n ERREUR DE SAISI ! ");
+                printf("\n \n \n ------->  Taper  1 - pour réessayer \n ------->  2 - Pour revenir au menu de gestion de cérémonie \n \n");
+                scanf("%d",&choix_menu);
+                if (choix_menu != 1)
+                {
+                    main();
                     break;
-                case 2:
-                    //Appel de la fonctions Menu
-                    menu();
-                    break;
-                case 3:
-                    //Appel de la fonctions liste de ceremonie
-                    liste_ceremonie();
-                    break;
-                default:
-                    printf(" \n ERREUR DE SAISI VUEILLER RÉESSAYER ! ");
-                    choix_menu == 0;
-            }
-        } while (choix_menu==0);
+                }
+        }
+    } while (choix_menu == 1);
        
     return 0;
 }

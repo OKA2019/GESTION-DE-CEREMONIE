@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
   0: "acilms",
-  1: "acilms",
-  2: "al"
+  1: "cilm",
+  2: "acilms"
 };
 
 var indexSectionNames =
@@ -14,8 +14,8 @@ var indexSectionNames =
 
 var indexSectionLabels =
 {
-  0: "All",
-  1: "Files",
-  2: "Functions"
+  0: "Tout",
+  1: "Fichiers",
+  2: "Fonctions"
 };
 
