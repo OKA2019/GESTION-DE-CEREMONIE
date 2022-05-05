@@ -1,4 +1,4 @@
-# Application de gestions des cérémonie (langage C )
+# Application de gestions des cérémonie (langage C)
 
 CAHIER  DE CHARGES
 
