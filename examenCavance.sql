@@ -28,12 +28,12 @@ CREATE TABLE `Ceremonie` (
   `descri_ceremo` varchar(250) NOT NULL,
   `date_ceremo` int NOT NULL,
   `date_debut` int DEFAULT NULL,
-  `date_fin` int DEFAULT NULL,
+  `type` int unsigned NOT NULL,
   `num_menu` int unsigned NOT NULL,
   PRIMARY KEY (`iden_ceromo`),
   KEY `num_menu` (`num_menu`),
   CONSTRAINT `Ceremonie_ibfk_1` FOREIGN KEY (`num_menu`) REFERENCES `Menu` (`iden_menu`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `Ceremonie` (
 
 LOCK TABLES `Ceremonie` WRITE;
 /*!40000 ALTER TABLE `Ceremonie` DISABLE KEYS */;
-INSERT INTO `Ceremonie` VALUES (1,'reunion','travail',604800,604800,604920,1),(4,'MARIAG','MARIAGE DU COUPLE DIABY',0,0,7200,3),(5,'MARIAGE','Union de Dieke et Louisette',632918016,632918016,632936016,3),(6,'REUNION','Seance de travail de la SIGKL 2022',1650010632,1650010632,1650017832,3),(7,'MARAIGE','Union des Yeo',1651448628,1651448628,1651484628,3),(8,'GALA','soire priver des etudiants de la SIGL',1651442335,1651442335,1651449535,2);
+INSERT INTO `Ceremonie` VALUES (1,'reunion','travail',604800,604800,1,1),(4,'UNION DU COUPLE DIEKÉ','Mariage de Dieké et Traoré',1652411225,1652411225,2,1),(5,'MARIAGE','Union de Dieke et Louisette',632918016,632918016,2,3),(6,'REUNION','Seance de travail de la SIGKL 2022',1650010632,1650010632,3,3),(7,'MARAIGE','Union des Yeo',1651448628,1651448628,2,3),(8,'DINÉ GALA','Soirée entre de la IT7',1653273422,1653273422,3,2),(9,'LANGAGE C','Examen de langage c avancé',1652839943,1652839943,1,3);
 /*!40000 ALTER TABLE `Ceremonie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +70,7 @@ CREATE TABLE `Invite` (
   PRIMARY KEY (`id_invite`),
   KEY `num_ceromo` (`num_ceromo`),
   CONSTRAINT `Invite_ibfk_1` FOREIGN KEY (`num_ceromo`) REFERENCES `Ceremonie` (`iden_ceromo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,7 +79,7 @@ CREATE TABLE `Invite` (
 
 LOCK TABLES `Invite` WRITE;
 /*!40000 ALTER TABLE `Invite` DISABLE KEYS */;
-INSERT INTO `Invite` VALUES (4,'OUATTARA','KOUNAPETRI ABDOULAYE',22,'0747963654','FERKE',1,5,1,7,'salade','riz avec poulet','mangue');
+INSERT INTO `Invite` VALUES (4,'OUATTARA','KOUNAPETRI ABDOULAYE',22,'0747963654','FERKE',1,5,1,7,'salade','riz avec poulet','mangue'),(5,'KAMATE','FANTA',25,'01010101','Abidjan',0,1,5,8,'mangue','frites','mangue'),(6,'OUATTARA','SIENFANI',28,'0749857569','Katiola',0,2,1,8,'mangue','frites','salade');
 /*!40000 ALTER TABLE `Invite` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,7 +105,7 @@ CREATE TABLE `Menu` (
 
 LOCK TABLES `Menu` WRITE;
 /*!40000 ALTER TABLE `Menu` DISABLE KEYS */;
-INSERT INTO `Menu` VALUES (1,'salde, mangue','foutou sauce gombo','orange, mangue, salade'),(2,'mangue','frites','mangue'),(3,'salade','Riz sauce graine','mangue');
+INSERT INTO `Menu` VALUES (1,'salde, mangue','foutou sauce gombo','orange, mangue, salade'),(2,'salade, mangue','Foutou avec poulet, frites avec mouton','mangue, salade, orange, banane'),(3,'salade','Riz sauce graine','mangue');
 /*!40000 ALTER TABLE `Menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -118,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-25  7:44:15
+-- Dump completed on 2022-05-05 15:56:03
