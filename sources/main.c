@@ -19,7 +19,11 @@
 #include "../header/ceremonie.h"
 #include "../header/invite.h"
 
-
+/**
+ * @brief Fonction princiaple de l'application
+ * 
+ * @return int (0)
+ */
 int main()
 {
     //On efface l'écrans
@@ -34,33 +38,29 @@ int main()
     //Variables 
     int choix_menu = 0;
 
-    printf(" \n \n ***************** BIENVENU DANS L'APPLICATION DES GESTION DE MENU DE CÉRÉMONIE ***************** \n \n ");
+    printf(" \n \n ***************** BIENVENU DANS L'APPLICATION DES GESTION DES CÉRÉMONIES ***************** \n \n ");
 
     do
     {
-        printf(" \n  1 - Cérémonie \n");
-        printf(" \n  2 - Menu \n");
-        printf(" \n  3 - Se connecter a une cérémonie \n");
-        printf(" \n  4 - Quitté \n");
-        printf("\n \n  ------->  Taper le numero de votre choiX \n \n");
+        printf(" \n  \t1 - Invité \n");
+        printf(" \n  \t2 - Gestionnaire \n");
+        printf(" \n  \t3 - Quitté \n");
+        printf("\n \n  ---------------->  Taper le numero de votre choiX \n \n");
         scanf("%d",&choix_menu);
         switch(choix_menu)
         {
             case 1:
-                ceremonie();
+                connect_invite();
                 break;
             case 2:
-                menu();
+                connect_administrateur();
                 break;
             case 3:
-                connect_ceremenie();
-                break;
-            case 4:
                 printf(" \n ************************ Bye, à la prochaine ! ************************ \n ");
                 break;
             default:
-                printf(" \n ERREUR DE SAISI ! ");
-                printf("\n \n \n ------->  Taper  1 - pour réessayer \n ------->  2 - Pour revenir au menu de gestion de cérémonie \n \n");
+                printf(" \n \t\t ERREUR DE SAISI ! ");
+                printf("\n \n \n ------------>  Taper  1 - pour réessayer \n ------->  2 - Pour revenir au menu de gestion de cérémonie \n \n");
                 scanf("%d",&choix_menu);
                 if (choix_menu != 1)
                 {
@@ -70,5 +70,5 @@ int main()
         }
     } while (choix_menu == 1);
        
-    return 0;
+    return (0);
 }

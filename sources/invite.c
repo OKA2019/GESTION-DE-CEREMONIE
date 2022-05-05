@@ -41,14 +41,14 @@ void invite(int num_ceremo)
 
     printf(" \n \n ***************** GESTION DES INVITES DE LA CÉREMONIE ***************** \n \n ");
     liste_invite(num_ceremo);
-
-    printf("\n \n \n ------->  Voulez-vous Faire ? <------- \n ");
-    printf("\n  -------> 1 - Ajouter un invité \n ");
-    printf("\n  -------> 2 - Modifier un invité \n");
-    printf("\n  -------> 3 - Supprimé un invité \n ");
-    printf("\n  -------> 4 - Retour \n \n");
     do
     {
+        printf("\n \n \n ------->  Voulez-vous Faire ? <------- \n ");
+        printf("\n  -------> 1 - Ajouter un invité \n ");
+        printf("\n  -------> 2 - Modifier un invité \n");
+        printf("\n  -------> 3 - Supprimé un invité \n ");
+        printf("\n  -------> 4 - Retour \n \n");
+
         scanf("%d",&choix_menu);
         switch (choix_menu)
         {
@@ -58,6 +58,7 @@ void invite(int num_ceremo)
         case 2:
             system("clear");
             modifier_invite(num_ceremo);
+            choix_menu = 1;
             break;
         case 3:
             system("clear");
@@ -202,15 +203,15 @@ void liste_invite(int num_ceremo)
         //Tant qu'il y a encore un résultat ...
         while (row = mysql_fetch_row(result))
         {
-            printf("\n Numéro de table : %s", row[0]);
-            printf(" \n Numéro de siège : %s", row[8]);
+            printf("\n Numéro d'identifiant' : %s", row[0]);
+            printf(" \n Place :  Table N°%s Siège N°%s ",row[7], row[8]);
             printf(" \n Noms : %s %s", row[1], row[2]);
             printf(" \n Age : %s", row[3]);
             printf(" \n contact : %s", row[4]);
             printf(" \n residence : %s", row[5]);
             if(atoi(row[6]) == 0)
             {
-                printf(" \n sexe : Femme");
+                printf(" \n sexe : Femme \n \n");
             }
             else
             {
@@ -305,24 +306,22 @@ void modifier_invite(int num_ceremo){
             printf(" \n Dessert :  ");
             dessert = lire(255);
 
-            char add[1000]; 
+            char add[2000]; 
             //Copie de la requette dans la variables add
-            sprintf(add, "UPDATE SET nom = '%s' , prenoms = '%s', age '%d', contact '%s', residence = '%s' , sexe = '%d', num_table = '%d', num_siege = '%d', entrer = '%s', plat = '%s', dessert = '%s' FROM Invite WHERE id_invite = '%d' AND num_ceromo = '%d'", nom, prenoms, age, contacts, residence, sexe, num_table, num_siege, entrer, plat, dessert, iden_invite, num_ceremo);
+            sprintf(add, "UPDATE Invite SET nom = '%s' , prenoms = '%s', age = '%d', contact = '%s', residence = '%s' , sexe = '%d', num_table = '%d', num_siege = '%d', entrer = '%s', plat = '%s', dessert = '%s' WHERE id_invite = '%d' AND num_ceromo = '%d'", nom, prenoms, age, contacts, residence, sexe, num_table, num_siege, entrer, plat, dessert, iden_invite, num_ceremo);
             if(!mysql_query(&mysql,add))
             {
-                printf("\n \n Inscription valider avec succès !!! \n \n ");
+                printf("\n \n \t Modification valider avec succès !!! \n \n ");
             }
             else
             {
                 printf(" \n \n Echec veuillez réessayer !!! \n ");
             }
 
-            printf("\n \n \n ------->  Taper  1 - Modifier un invité  ou 2 - Pour revenir au menu \n \n");
-            scanf("%d",&continuer);
-            if (continuer != 1)
-            {
-                invite(num_ceremo);
-            }
+            printf("\n \n \n -------> Fait votre choix \n \n");
+            printf("\n \t 1 - Réessayer \n");
+            printf("\n \t 2 - Retour \n");
+            scanf("%d",&ajouter);
         } while (ajouter == 1);
     }
     else

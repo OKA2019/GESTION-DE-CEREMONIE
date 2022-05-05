@@ -1,11 +1,14 @@
 lib :
-	ar crs librairie.a main.o sources/lire.o sources/menu.o sources/ceremonie.o sources/invite.o
+	ar crs librairie.a main.o sources/users.o sources/lire.o sources/menu.o sources/ceremonie.o sources/invite.o
 
-main : main.o sources/lire.o sources/menu.o sources/ceremonie.o sources/invite.o
-	gcc -o main main.o sources/lire.o sources/menu.o sources/ceremonie.o sources/invite.o -L. -lmysqlclient
+main : main.o sources/users.o sources/lire.o sources/menu.o sources/ceremonie.o sources/invite.o
+	gcc -o main main.o sources/users.o sources/lire.o sources/menu.o sources/ceremonie.o sources/invite.o -L. -lmysqlclient
 
 main.o : sources/main.c
 	gcc -c sources/main.c
+	
+users.o : sources/users.c
+	gcc -c sources/users.c
 
 ceremonie.o : sources/ceremonie.o
 	gcc -c sources/ceremonie.c

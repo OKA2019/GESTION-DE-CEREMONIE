@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion de cérémonie: Référence de la structure _my_rw_lock_t</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion de cérémonie
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Examen de langage C avancé</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Champs de données</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la structure _my_rw_lock_t</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Champs de données</h2></td></tr>
+<tr class="memitem:a0abaf4b5d42c4e5d19190035fade3599"><td class="memItemLeft" align="right" valign="top"><a id="a0abaf4b5d42c4e5d19190035fade3599"></a>
+pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><b>lock</b></td></tr>
+<tr class="separator:a0abaf4b5d42c4e5d19190035fade3599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e67a25852ff663d0f392d3b302a3a1"><td class="memItemLeft" align="right" valign="top"><a id="a86e67a25852ff663d0f392d3b302a3a1"></a>
+pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><b>readers</b></td></tr>
+<tr class="separator:a86e67a25852ff663d0f392d3b302a3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d464f01154a35a6910602e389a56b48"><td class="memItemLeft" align="right" valign="top"><a id="a5d464f01154a35a6910602e389a56b48"></a>
+pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><b>writers</b></td></tr>
+<tr class="separator:a5d464f01154a35a6910602e389a56b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89f234133d3efe315836311cbf21c64b"><td class="memItemLeft" align="right" valign="top"><a id="a89f234133d3efe315836311cbf21c64b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>state</b></td></tr>
+<tr class="separator:a89f234133d3efe315836311cbf21c64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a929be1ec58388fb3e66ea10a09ea8b66"><td class="memItemLeft" align="right" valign="top"><a id="a929be1ec58388fb3e66ea10a09ea8b66"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>waiters</b></td></tr>
+<tr class="separator:a929be1ec58388fb3e66ea10a09ea8b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
+<li>sources/MYSQL/<a class="el" href="my__pthread_8h_source.html">my_pthread.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

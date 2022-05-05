@@ -6,5 +6,7 @@
     void connect_ceremenie();
     void modifier_ceremonie();
     void supprimer_ceremonie();
-    void chronogramme(char *nom_ceromo, char *descri_ceremo, char *date_ceremo, char *date_debut, char *date_fin, char *num_menu);
+    void chronogramme_reunion();
+    void chronogramme_mariage();
+    void chronogramme_gala();
 #endif

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion de cérémonie: Référence de la structure st_my_thread_var</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion de cérémonie
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Examen de langage C avancé</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Champs de données</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la structure st_my_thread_var</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Champs de données</h2></td></tr>
+<tr class="memitem:a6300cea76aadb986fffac9d4fb2e5080"><td class="memItemLeft" align="right" valign="top"><a id="a6300cea76aadb986fffac9d4fb2e5080"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>thr_errno</b></td></tr>
+<tr class="separator:a6300cea76aadb986fffac9d4fb2e5080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aab3dedbadbccc8038a7f2875aeb68b"><td class="memItemLeft" align="right" valign="top"><a id="a9aab3dedbadbccc8038a7f2875aeb68b"></a>
+pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><b>suspend</b></td></tr>
+<tr class="separator:a9aab3dedbadbccc8038a7f2875aeb68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4acff8232e4aec9cd5c6dc200ac55ef3"><td class="memItemLeft" align="right" valign="top"><a id="a4acff8232e4aec9cd5c6dc200ac55ef3"></a>
+pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><b>mutex</b></td></tr>
+<tr class="separator:a4acff8232e4aec9cd5c6dc200ac55ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c034b6da3adeb4941a7e3eba9b23847"><td class="memItemLeft" align="right" valign="top"><a id="a4c034b6da3adeb4941a7e3eba9b23847"></a>
+pthread_mutex_t *volatile&#160;</td><td class="memItemRight" valign="bottom"><b>current_mutex</b></td></tr>
+<tr class="separator:a4c034b6da3adeb4941a7e3eba9b23847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6ccf7bea438e97c9a2db744f8d363e"><td class="memItemLeft" align="right" valign="top"><a id="a6f6ccf7bea438e97c9a2db744f8d363e"></a>
+pthread_cond_t *volatile&#160;</td><td class="memItemRight" valign="bottom"><b>current_cond</b></td></tr>
+<tr class="separator:a6f6ccf7bea438e97c9a2db744f8d363e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf85b1d2dc0506f5e45f84c203a671a2"><td class="memItemLeft" align="right" valign="top"><a id="abf85b1d2dc0506f5e45f84c203a671a2"></a>
+pthread_t&#160;</td><td class="memItemRight" valign="bottom"><b>pthread_self</b></td></tr>
+<tr class="separator:abf85b1d2dc0506f5e45f84c203a671a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7350fbd6ad10618f3b750b1f99ca5c3c"><td class="memItemLeft" align="right" valign="top"><a id="a7350fbd6ad10618f3b750b1f99ca5c3c"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="separator:a7350fbd6ad10618f3b750b1f99ca5c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeff44a8083639d05947980a739b39ca"><td class="memItemLeft" align="right" valign="top"><a id="aeeff44a8083639d05947980a739b39ca"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>cmp_length</b></td></tr>
+<tr class="separator:aeeff44a8083639d05947980a739b39ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6166320b13bcda8dc90a53f581bff14"><td class="memItemLeft" align="right" valign="top"><a id="aa6166320b13bcda8dc90a53f581bff14"></a>
+int volatile&#160;</td><td class="memItemRight" valign="bottom"><b>abort</b></td></tr>
+<tr class="separator:aa6166320b13bcda8dc90a53f581bff14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3217a48940ab8a42ea047331bc17d314"><td class="memItemLeft" align="right" valign="top"><a id="a3217a48940ab8a42ea047331bc17d314"></a>
+my_bool&#160;</td><td class="memItemRight" valign="bottom"><b>init</b></td></tr>
+<tr class="separator:a3217a48940ab8a42ea047331bc17d314"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a733915ad5edf13637c9d3ac03d89cb8b"><td class="memItemLeft" align="right" valign="top"><a id="a733915ad5edf13637c9d3ac03d89cb8b"></a>
+struct <a class="el" href="structst__my__thread__var.html">st_my_thread_var</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr class="separator:a733915ad5edf13637c9d3ac03d89cb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af02eebbd4b3b4a07856aa9dc60b87190"><td class="memItemLeft" align="right" valign="top"><a id="af02eebbd4b3b4a07856aa9dc60b87190"></a>
+struct <a class="el" href="structst__my__thread__var.html">st_my_thread_var</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>prev</b></td></tr>
+<tr class="separator:af02eebbd4b3b4a07856aa9dc60b87190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8763470eb03503f38b32906f19df8b25"><td class="memItemLeft" align="right" valign="top"><a id="a8763470eb03503f38b32906f19df8b25"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>opt_info</b></td></tr>
+<tr class="separator:a8763470eb03503f38b32906f19df8b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab97dc4b4eedd3c3023ab26401bffe8d9"><td class="memItemLeft" align="right" valign="top"><a id="ab97dc4b4eedd3c3023ab26401bffe8d9"></a>
+gptr&#160;</td><td class="memItemRight" valign="bottom"><b>dbug</b></td></tr>
+<tr class="separator:ab97dc4b4eedd3c3023ab26401bffe8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f8bd8c663161e5976f8a518f4a0af6"><td class="memItemLeft" align="right" valign="top"><a id="a47f8bd8c663161e5976f8a518f4a0af6"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>name</b> [THREAD_NAME_SIZE+1]</td></tr>
+<tr class="separator:a47f8bd8c663161e5976f8a518f4a0af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
+<li>sources/MYSQL/<a class="el" href="my__pthread_8h_source.html">my_pthread.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

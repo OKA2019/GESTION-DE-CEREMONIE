@@ -161,11 +161,11 @@ void liste_menu(){
         int i = 1;
 
         result = mysql_use_result(&mysql);
-        printf(" \n \n ***************** LISTE DES MENUS  ***************** \n \n ");
+        printf(" \n \n \t\t\t LISTE DES MENUS  \n ");
 
         while (row = mysql_fetch_row(result))
         {
-            printf(" \n \n Numéro %s ", row[0]);
+            printf(" \n Numéro %s ", row[0]);
             printf(" \n Entrer %s ", row[1]);
             printf(" \n Plat : %s", row[2]);
             printf(" \n Dessert : %s \n", row[3]);
