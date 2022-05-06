@@ -152,7 +152,7 @@ void connect_invite()
             scanf("%d", &iden_invite);
 
             char menuBD[5000];
-            sprintf(menuBD,"SELECT nom_ceromo, descri_ceremo, from_unixtime(date_ceremo), num_menu, type, Menu.entrer, Menu.plat, Menu.dessert, nom, prenoms, age, contact, residence, sexe, num_table, num_siege, Invite.entrer, Invite.plat, Invite.dessert FROM Ceremonie, Invite, Menu WHERE iden_menu = num_menu AND num_ceromo = iden_ceromo AND num_ceromo = %d AND id_invite = %d ", iden_ceremo, iden_invite);
+            sprintf(menuBD,"SELECT nom_ceromo, descri_ceremo, from_unixtime(date_ceremo,'%W, %D %M %Y'), num_menu, type, Menu.entrer, Menu.plat, Menu.dessert, nom, prenoms, age, contact, residence, sexe, num_table, num_siege, Invite.entrer, Invite.plat, Invite.dessert FROM Ceremonie, Invite, Menu WHERE iden_menu = num_menu AND num_ceromo = iden_ceromo AND num_ceromo = %d AND id_invite = %d ", iden_ceremo, iden_invite);
         
             mysql_query(&mysql, menuBD);
             MYSQL_RES *resultat = NULL;
