@@ -36,43 +36,97 @@ void connect_administrateur()
     void ajout_ceremonie();
     void menu();
     void invite();
+    char *lire(int size);
 
     //Variables 
-    int choix_menu = 0;
+    int choix_menu = 0, continuer;
+    char *nom_gestion, *pass_gestion;
 
-    do
+    MYSQL mysql;
+    mysql_init(&mysql);
+    mysql_options(&mysql,MYSQL_READ_DEFAULT_GROUP,"option");
+    if(mysql_real_connect(&mysql,"localhost","oka2019","123456789","examenCavance",0,NULL,0))
     {
-        printf(" \n  1 - Cérémonie \n");
-        printf(" \n  2 - Menu \n");
-        printf(" \n  3 - Se connecter a une cérémonie \n");
-        printf(" \n  4 - Home \n");
-        printf("\n \n  ------->  Taper le numero de votre choiX \n \n");
-        scanf("%d",&choix_menu);
-        switch(choix_menu)
+        do
         {
-            case 1:
-                ceremonie();
-                break;
-            case 2:
-                menu();
-                break;
-            case 3:
-                connect_ceremenie();
-                break;
-            case 4:
-                main();
-                break;
-            default:
-                printf(" \n ERREUR DE SAISI ! ");
-                printf("\n \n \n ------->  Taper  1 - pour réessayer \n ------->  2 - Pour revenir à l'accueil \n \n");
-                scanf("%d",&choix_menu);
-                if (choix_menu != 1)
+            //On efface l'écrans
+            system("clear");
+            printf("\n**************************  AUTHENTIFICATION DU GESTIONNAIRE **************************\n\n");
+    
+            printf("\n\t Entrer votre d'utilisateur \n");
+            getchar();
+            nom_gestion = lire(31);
+            printf("\t Entrer votre mot de pass \n");
+            pass_gestion = lire(51);
+
+            char menuBD[5000];
+            sprintf(menuBD,"SELECT * FROM gestionnaire WHERE nom_gestion = '%s' AND pass_gestion = '%s' ", nom_gestion, pass_gestion);
+        
+            mysql_query(&mysql, menuBD);
+            MYSQL_RES *resultat = NULL;
+            MYSQL_ROW row;
+            int i = 1;
+            resultat = mysql_use_result(&mysql);
+            printf("\n %s \n", resultat);
+            row = mysql_fetch_row(resultat);
+            if(row != NULL)
+            {
+                do
+                {
+                    printf(" \n  1 - Cérémonie \n");
+                    printf(" \n  2 - Menu \n");
+                    printf(" \n  3 - Se connecter a une cérémonie \n");
+                    printf(" \n  4 - Home \n");
+                    printf("\n \n  ------->  Taper le numero de votre choiX \n \n");
+                    scanf("%d",&choix_menu);
+                    switch(choix_menu)
+                    {
+                        case 1:
+                            ceremonie();
+                            break;
+                        case 2:
+                            menu();
+                            break;
+                        case 3:
+                            connect_ceremenie();
+                            break;
+                        case 4:
+                            main();
+                            break;
+                        default:
+                            printf(" \n ERREUR DE SAISI ! ");
+                            printf("\n \n \n ------->  Taper  1 - pour réessayer \n ------->  2 - Pour revenir à l'accueil \n \n");
+                            scanf("%d",&choix_menu);
+                            if (choix_menu != 1)
+                            {
+                                main();
+                                break;
+                            }
+                    }
+                } while (choix_menu == 1);
+            }
+            else
+            {
+                printf("\tErreur, ces coordonnées ne figure pas dans notre base \n \n");
+                printf("\n \n -------> 1 - Pour réessayer \n");
+                printf("\n -------> 2 - Accueil \n");
+                scanf("%d",&continuer);
+                if (continuer == 2)
                 {
                     main();
-                    break;
                 }
-        }
-    } while (choix_menu == 1);
+                else
+                {
+                    continuer = 1;
+                }
+            }
+        }while (continuer == 1);
+    }
+    else
+    {
+        printf("\n \n Erreur de connexion a la base au niveau d'ajout des adherents \n \n ");
+    }
+
 }
 
 

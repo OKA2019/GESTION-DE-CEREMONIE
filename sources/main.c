@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author OUATTARA KOUNAPETRI ABDOULAYE (kounapetri05@gmail.com)
- * @brief Accueil de l'application gestion de menu
+ * @brief Accueil de l'application gestion de cérémonie
  * @version 0.1
  * @date 2022-03-15
  * 

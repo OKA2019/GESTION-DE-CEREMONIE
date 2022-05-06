@@ -108,6 +108,31 @@ LOCK TABLES `Menu` WRITE;
 INSERT INTO `Menu` VALUES (1,'salde, mangue','foutou sauce gombo','orange, mangue, salade'),(2,'salade, mangue','Foutou avec poulet, frites avec mouton','mangue, salade, orange, banane'),(3,'salade','Riz sauce graine','mangue');
 /*!40000 ALTER TABLE `Menu` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `gestionnaire`
+--
+
+DROP TABLE IF EXISTS `gestionnaire`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `gestionnaire` (
+  `id_gestion` int unsigned NOT NULL AUTO_INCREMENT,
+  `nom_gestion` varchar(50) NOT NULL,
+  `pass_gestion` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_gestion`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gestionnaire`
+--
+
+LOCK TABLES `gestionnaire` WRITE;
+/*!40000 ALTER TABLE `gestionnaire` DISABLE KEYS */;
+INSERT INTO `gestionnaire` VALUES (1,'OKA','1234');
+/*!40000 ALTER TABLE `gestionnaire` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -118,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-05 15:56:03
+-- Dump completed on 2022-05-06 11:24:16

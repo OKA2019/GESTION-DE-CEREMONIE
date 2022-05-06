@@ -176,7 +176,7 @@ void liste_ceremonie(){
     mysql_options(&mysql,MYSQL_READ_DEFAULT_GROUP,"option");
     if(mysql_real_connect(&mysql,"localhost","oka2019","123456789","examenCavance",0,NULL,0))
     {   char menuBD[1000];
-        sprintf(menuBD,"SELECT iden_ceromo, nom_ceromo, descri_ceremo, from_unixtime(date_ceremo),type,date_ceremo FROM Ceremonie WHERE date_ceremo >= '%d' ORDER BY date_ceremo DESC", date_auj);
+        sprintf(menuBD,"SELECT iden_ceromo, nom_ceromo, descri_ceremo, from_unixtime(date_ceremo,'%W, %D %M %Y'),type,date_ceremo FROM Ceremonie WHERE date_ceremo >= '%d' ORDER BY date_ceremo DESC", date_auj);
         mysql_query(&mysql, menuBD);
 
         MYSQL_RES *result = NULL;
@@ -246,7 +246,7 @@ void connect_ceremenie()
         printf(" ----------> Enter le numero de la ceremonie \n");
         scanf("%d", &reun);
 
-        sprintf(menuBD,"SELECT nom_ceromo, descri_ceremo,from_unixtime(date_ceremo),num_menu, type FROM Ceremonie WHERE iden_ceromo = %d", reun);
+        sprintf(menuBD,"SELECT nom_ceromo, descri_ceremo,from_unixtime(date_ceremo, '%W, %D %M %Y'),num_menu, type FROM Ceremonie WHERE iden_ceromo = %d", reun);
         mysql_query(&mysql, menuBD);
 
         MYSQL_RES *result = NULL;
